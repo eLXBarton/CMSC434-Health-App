@@ -6,7 +6,7 @@ import java.awt.BorderLayout;
 public class MainFrame {
 
 	private JFrame frame;
-
+	//Hello world
 	/**
 	 * Launch the application.
 	 */
