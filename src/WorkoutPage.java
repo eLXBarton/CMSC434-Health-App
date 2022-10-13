@@ -10,16 +10,34 @@ public class WorkoutPage {
         frame.setLayout(new GridBagLayout());
         GridBagConstraints con = new GridBagConstraints();
 
-        log = new JButton("test");
-        plan = new JButton("tet2");
-
+        log = new JButton("History");
+        plan = new JButton("Plans");
+        workout = new JButton("Log Workout");
+        settings = new JButton("Settings");
+        back = new JButton("Back");
+        /*TODO: add action listeners for plans, log, and workout
+        *   make the pages for those buttons
+        *
+        */
         con.fill = GridBagConstraints.HORIZONTAL;
         con.gridx = 0;
         con.gridy = 0;
-        frame.add(log, con);
+        frame.add(back, con);
         con.gridx = 1;
         con.gridy = 0;
+        frame.add(settings, con);
+        con.gridx = 0;
+        con.gridy = 1;
+        frame.add(workout, con);
+        con.gridx = 1;
+        con.gridy = 1;
         frame.add(plan, con);
+        con.gridx = 0;
+        con.gridy = 0;
+        frame.add(back, con);
+        con.gridx = 0;
+        con.gridy = 2;
+        frame.add(log, con);
         frame.setSize(300,300);
         frame.setPreferredSize(frame.getSize());
         frame.setVisible(true);
