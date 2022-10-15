@@ -2,12 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
+ 
+import java.net.URL;
 
-public class WorkoutPage {
+public class WorkoutPage extends JFrame {
     JFrame frame; //this needs to be the container
     JPanel panelWork, panelLog, panelPlan, panelHome; //these need to go in the frame
     JButton settings, back, log, plan, workout;
     JTextArea text1, text2, text3;
+    java.net.URL web_page;
+    JScrollPane scroller;
+
     public WorkoutPage(){
         frame = new JFrame();
         log = new JButton("History");
@@ -18,8 +23,9 @@ public class WorkoutPage {
 
         startPage();
         historyPage();
+        planPage();
 
-        frame.add(panelLog);
+        frame.add(panelWork);
         
         /*TODO: add action listeners for plans, log, and workout
         *   make the pages for those buttons
@@ -62,6 +68,31 @@ public class WorkoutPage {
         panelHome.setPreferredSize(panelHome.getSize());
 
         
+    }
+
+
+
+    void planPage(){
+        JButton full_body = new JButton("Full Body (3 Days)"), four = new JButton("Four Days"), cardio = new JButton("Cardio"), cross_fit = new JButton("Cross Fit");
+        panelWork = new JPanel(new GridBagLayout());
+        GridBagConstraints con = new GridBagConstraints();
+        panelWork.setSize(frame.getSize());
+        panelWork.setPreferredSize(frame.getSize());
+
+        full_body.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                FullBodyPage page = new FullBodyPage();
+                page.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
+        
+        con.fill = GridBagConstraints.HORIZONTAL;
+
+        con.gridx = 0;
+        con.gridy = 0;
+        panelWork.add(full_body, con);
     }
 
     void historyPage(){
