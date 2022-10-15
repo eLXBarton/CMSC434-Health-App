@@ -58,9 +58,6 @@ public class WorkoutPage extends JFrame {
         con.gridy = 1;
         panelHome.add(plan, con);
         con.gridx = 0;
-        con.gridy = 0;
-        panelHome.add(back, con);
-        con.gridx = 0;
         con.gridy = 2;
         panelHome.add(log, con);
 
@@ -82,7 +79,15 @@ public class WorkoutPage extends JFrame {
         full_body.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                FullBodyPage page = new FullBodyPage();
+                FullBodyPage page = new FullBodyPage(frame);
+                page.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
+        four.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                UpperLower page = new UpperLower(frame);
                 page.setVisible(true);
                 frame.setVisible(false);
             }
@@ -93,6 +98,15 @@ public class WorkoutPage extends JFrame {
         con.gridx = 0;
         con.gridy = 0;
         panelWork.add(full_body, con);
+        con.gridx = 1;
+        con.gridy = 0;
+        panelWork.add(four, con);
+        con.gridx = 0;
+        con.gridy = 1;
+        panelWork.add(cardio, con);
+        con.gridx = 1;
+        con.gridy = 1;
+        panelWork.add(cross_fit, con);
     }
 
     void historyPage(){

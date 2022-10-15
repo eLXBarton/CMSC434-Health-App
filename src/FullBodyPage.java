@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class FullBodyPage extends JFrame{
     
@@ -10,7 +9,7 @@ public class FullBodyPage extends JFrame{
     JTextArea sess1,sess2,sess3;
     JButton back;
     
-    public FullBodyPage(){
+    public FullBodyPage(JFrame prev){
         setLayout(new GridLayout(2,2));
         back = new JButton("Back");
         String[][] works1 = {{"Squats", "5 sets", "5 reps"},
@@ -59,13 +58,11 @@ public class FullBodyPage extends JFrame{
         scroller.setSize(new Dimension(600, 225));
         add(scroller);
         add(back);
-        //back.setSize(new Dimension(20,40));
-        //add(back, BorderLayout.CENTER);
+
         back.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                WorkoutPage page = new WorkoutPage();
-                page.setVisible(true);
+                prev.setVisible(true);
                 setVisible(false);
             }
         });
