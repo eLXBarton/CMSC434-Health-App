@@ -12,21 +12,25 @@ public class UpperLower extends JFrame{
     public UpperLower(JFrame prev){
         setLayout(new GridLayout(2,2));
         back = new JButton("Back");
-        String[][] works1 = {{"Back Squat", "5 sets", "5 reps"},
+        String[][] works1 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Back Squat", "5 sets", "5 reps"},
                             {"Romanian Deadlift", "4 sets", "8 reps"},
                             {"Calf Raise", "3 sets", "8 reps"},
                             {"Leg Extension", "3 sets", "10 reps"},
                             {"Leg Curl", "3 sets", "10 reps"}};
-        String[][] works2 = {{"Barbell Bench Press", "5 sets", "5 reps"},
+        String[][] works2 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Barbell Bench Press", "5 sets", "5 reps"},
                             {"Pull Ups", "4 sets", "8 reps"},
                             {"Dips", "3 sets", "10 reps"},
                             {"Skull Crusher", "3 sets", "12 reps"},
                             {"Hammer Curl", "3 sets", "12 reps"}};
-        String[][] works3 = {{"Deadlift", "5 sets", "5 reps"},
+        String[][] works3 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Deadlift", "5 sets", "5 reps"},
                             {"Hack Squat", "4 sets", "8 reps"},
                             {"Hip Thrust", "4 sets", "8 reps"},
                             {"Calf Raise", "3 sets", "12 reps"}};
-        String[][] works4 = {{"Barbell Row", "4 sets", "6 reps"},
+        String[][] works4 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Barbell Row", "4 sets", "6 reps"},
                             {"Incline Bench Press", "4 sets", "6 reps"},
                             {"Seated Row", "4 sets", "10 reps"},
                             {"Preacher Curl", "3 sets", "12 reps"},

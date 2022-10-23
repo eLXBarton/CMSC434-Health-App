@@ -13,14 +13,16 @@ public class FullBodyPage extends JFrame{
     public FullBodyPage(JFrame prev){
         setLayout(new GridLayout(2,2));
         back = new JButton("Back");
-        String[][] works1 = {{"Squats", "5 sets", "5 reps"},
+        String[][] works1 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Squats", "5 sets", "5 reps"},
                             {"Dumbbell Bench Press", "4 sets", "8 reps"},
                             {"Bent Over Row", "4 sets", "6 reps"},
                             {"Romanian Deadlift", "3 sets", "8 reps"},
                             {"Dips", "2 sets", "Until Failure"},
                             {"Lateral Raise", "2 sets", "15 reps"},
                             {"Face Pull", "2 sets", "15 reps"}};
-        String[][] works2 = {{"Bench Press", "5 sets", "5 reps"},
+        String[][] works2 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Bench Press", "5 sets", "5 reps"},
                             {"Pull Ups", "4 sets", "6 reps"},
                             {"Leg Press", "3 sets", "8 reps"},
                             {"Seated Dumbbell Shoulder Press", "3 sets", "10 reps"},
@@ -28,7 +30,8 @@ public class FullBodyPage extends JFrame{
                             {"Leg Extension", "2 sets", "15 reps"},
                             {"Leg Curl", "2 sets", "15 reps"},
                             {"Calf Raises", "2 sets", "15 reps"}};
-        String[][] works3 = {{"Deadlift", "5 sets", "5 reps"},
+        String[][] works3 = {{"Exercise", "# Sets", "# Reps"},
+                            {"Deadlift", "5 sets", "5 reps"},
                             {"Military Press", "4 sets", "6 reps"},
                             {"Seated Row", "3 sets", "8 reps"},
                             {"Hip Thrust", "3 sets", "8 reps"},

@@ -38,7 +38,14 @@ public class PlanPage extends JFrame{
                 panelWork.setVisible(false);
             }
         });
-        
+        cardio.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Cardio page = new Cardio(panelWork);
+                page.setVisible(true);
+                panelWork.setVisible(false);
+            }
+        });
         con.fill = GridBagConstraints.HORIZONTAL;
 
         con.gridx = 0;
