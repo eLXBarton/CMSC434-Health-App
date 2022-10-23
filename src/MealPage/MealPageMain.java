@@ -76,12 +76,30 @@ public class MealPageMain {
 		bodyPanel.setLayout(new GridLayout(2, 2, 20, 20));
 		
 		JButton btnA = new JButton("\r\nAdd Meal");
+		btnA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OpenAddMealTab();
+			}
+
+			private void OpenAddMealTab() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		bodyPanel.add(btnA);
 		
 		JButton btnB = new JButton("b2");
+		btnB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		bodyPanel.add(btnB);
 		
 		JButton btnC = new JButton("Your Recipies");
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		bodyPanel.add(btnC);
 		
 		JButton btnD = new JButton("Links To New Recipies");
