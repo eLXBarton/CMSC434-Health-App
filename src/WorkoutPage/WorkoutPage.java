@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 
 public class WorkoutPage extends JFrame {
-    JFrame frame; //this needs to be the container
+    public JFrame frame; //this needs to be the container
     JPanel panelWork, panelLog, panelHist, panelHome; //these need to go in the frame
     JButton settings, back, hist, plan, log;
     JTextArea text1, text2, text3;

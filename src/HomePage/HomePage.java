@@ -22,8 +22,8 @@ import WorkoutPage.WorkoutPage;
 
 public class HomePage{
 
-	private JFrame frmIncludedHealthApp;
-	private JTextField txtWelcomeToIncluded;
+	private JFrame frame;
+	private JTextField txt;
 
 	/**
 	 * Launch the application.
@@ -33,7 +33,7 @@ public class HomePage{
 			public void run() {
 				try {
 					HomePage window = new HomePage();
-					window.frmIncludedHealthApp.setVisible(true);
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,13 +52,13 @@ public class HomePage{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmIncludedHealthApp = new JFrame();
-		frmIncludedHealthApp.setTitle("Included Health App");
-		frmIncludedHealthApp.getContentPane().setBackground(new Color(221, 178, 255));
-		frmIncludedHealthApp.getContentPane().setForeground(new Color(221, 178, 255));
-		frmIncludedHealthApp.setBounds(100, 100, 375, 500);
-		frmIncludedHealthApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmIncludedHealthApp.getContentPane().setLayout(null);
+		frame = new JFrame();
+		frame.setTitle("Included Health App");
+		frame.getContentPane().setBackground(new Color(221, 178, 255));
+		frame.getContentPane().setForeground(new Color(221, 178, 255));
+		frame.setBounds(100, 100, 375, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
 		JButton profileButton = new JButton("Profile");
 		profileButton.setForeground(Color.WHITE);
@@ -66,7 +66,7 @@ public class HomePage{
 		profileButton.setHorizontalAlignment(SwingConstants.LEFT);
 		profileButton.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 12));
 		profileButton.setBounds(294, 0, 69, 64);
-		frmIncludedHealthApp.getContentPane().add(profileButton);
+		frame.getContentPane().add(profileButton);
 		
 		JButton mealsButton = new JButton("Meals");
 		mealsButton.setForeground(Color.WHITE);
@@ -75,7 +75,9 @@ public class HomePage{
 		mealsButton.setBounds(44, 98, 111, 116);
 		Action mealsAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
-				MealPageMain.main(null);
+				MealPageMain mealPage = new MealPageMain();
+				frame.setVisible(false);
+				mealPage.getFrame().setVisible(true);
 			}
 
 			@Override
@@ -115,7 +117,7 @@ public class HomePage{
 			}
 		};
 		mealsButton.addActionListener(mealsAction);
-		frmIncludedHealthApp.getContentPane().add(mealsButton);
+		frame.getContentPane().add(mealsButton);
 		
 		JButton workOutButton = new JButton("Workouts");
 		workOutButton.setForeground(Color.WHITE);
@@ -124,7 +126,10 @@ public class HomePage{
 		workOutButton.setBounds(180, 98, 111, 116);
 		Action workOutAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
-				WorkoutPage.main(null);
+				WorkoutPage workoutPage = new WorkoutPage();
+				frame.setVisible(false);
+				workoutPage.frame.setVisible(true);
+				
 			}
 
 			@Override
@@ -164,31 +169,31 @@ public class HomePage{
 			}
 		};
 		workOutButton.addActionListener(workOutAction);
-		frmIncludedHealthApp.getContentPane().add(workOutButton);
+		frame.getContentPane().add(workOutButton);
 		
 		JButton journalButton = new JButton("Journal");
 		journalButton.setForeground(Color.WHITE);
 		journalButton.setBackground(new Color(72, 9, 121));
 		journalButton.setBounds(44, 261, 111, 116);
 		journalButton.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 15));
-		frmIncludedHealthApp.getContentPane().add(journalButton);
+		frame.getContentPane().add(journalButton);
 		
 		JButton miscButton = new JButton("About the Creators");
 		miscButton.setForeground(Color.WHITE);
 		miscButton.setBackground(new Color(72, 9, 121));
 		miscButton.setBounds(180, 261, 111, 116);
 		miscButton.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 15));
-		frmIncludedHealthApp.getContentPane().add(miscButton);
+		frame.getContentPane().add(miscButton);
 		
-		txtWelcomeToIncluded = new JTextField();
-		txtWelcomeToIncluded.setBackground(new Color(255,121,214));
-		txtWelcomeToIncluded.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWelcomeToIncluded.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 15));
-		txtWelcomeToIncluded.setText("Welcome To Included Health!");
-		txtWelcomeToIncluded.setEnabled(false);
-		txtWelcomeToIncluded.setEditable(false);
-		txtWelcomeToIncluded.setBounds(44, 11, 247, 64);
-		frmIncludedHealthApp.getContentPane().add(txtWelcomeToIncluded);
-		txtWelcomeToIncluded.setColumns(10);
+		txt = new JTextField();
+		txt.setBackground(new Color(255,121,214));
+		txt.setHorizontalAlignment(SwingConstants.CENTER);
+		txt.setFont(new Font("Berlin Sans FB Demi", Font.BOLD, 15));
+		txt.setText("Welcome To Included Health!");
+		txt.setEnabled(false);
+		txt.setEditable(false);
+		txt.setBounds(44, 11, 247, 64);
+		frame.getContentPane().add(txt);
+		txt.setColumns(10);
 	}
 }
