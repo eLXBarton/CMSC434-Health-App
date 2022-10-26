@@ -55,7 +55,7 @@ public class WorkoutPage extends JFrame {
         log.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                LogPage panelLog = new LogPage(frame, list, real);
+                LogPage panelLog = new LogPage(frame, real);
                 frame.setVisible(false);
                 panelLog.setVisible(true);
             }
@@ -87,6 +87,11 @@ public class WorkoutPage extends JFrame {
         GridBagConstraints con = new GridBagConstraints();
         
         con.fill = GridBagConstraints.HORIZONTAL;
+        con.ipadx = 10;
+        con.ipady = 40;
+        con.weightx = 0;
+        con.weighty = 0;
+        con.insets = new Insets(5,5,50,5);
         con.gridx = 0;
         con.gridy = 0;
         panelHome.add(back, con);
@@ -95,12 +100,14 @@ public class WorkoutPage extends JFrame {
         panelHome.add(settings, con);
         con.gridx = 0;
         con.gridy = 1;
+        con.insets = new Insets(5,5,5,5);
         panelHome.add(log, con);
         con.gridx = 1;
         con.gridy = 1;
         panelHome.add(plan, con);
         con.gridx = 0;
         con.gridy = 2;
+        con.gridwidth = 2;
         panelHome.add(hist, con);
 
         panelHome.setSize(375,500);

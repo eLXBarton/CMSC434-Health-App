@@ -50,6 +50,7 @@ public class PlanPage extends JFrame{
 
         con.gridx = 0;
         con.gridy = 0;
+        con.insets = new Insets(10,10,10,10);
         panelWork.add(full_body, con);
         con.gridx = 1;
         con.gridy = 0;
@@ -62,6 +63,8 @@ public class PlanPage extends JFrame{
         panelWork.add(cross_fit, con);
         con.gridx = 0;
         con.gridy = 2;
+        con.gridwidth = 2;
+        con.insets = new Insets(30,10,10,10);
         panelWork.add(back, con);
         
     }

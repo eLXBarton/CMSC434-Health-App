@@ -11,6 +11,8 @@ public class HistoryPage extends JFrame{
         temp.add(list);
         frame.setViewportView(temp);
         JButton back = new JButton("Back");
+        back.setSize(new Dimension(100, 75));
+        back.setPreferredSize(new Dimension(100, 75));
         setLayout(new GridLayout(2,2));
         add(frame);
         add(back);
