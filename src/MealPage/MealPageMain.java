@@ -13,11 +13,16 @@ import javax.swing.SpringLayout;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import WorkoutPage.LogPage;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
@@ -31,7 +36,7 @@ import java.awt.event.ActionEvent;
 public class MealPageMain {
 
 	private JFrame frame;
-	private JTextField txtFood;
+	private JFrame prev;
 
 	/**
 	 * Launch the application.
@@ -40,7 +45,7 @@ public class MealPageMain {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MealPageMain window = new MealPageMain();
+					MealPageMain window = new MealPageMain(null);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +57,8 @@ public class MealPageMain {
 	/**
 	 * Create the application.
 	 */
-	public MealPageMain() {
+	public MealPageMain(JFrame prev) {
+		this.prev = prev;
 		initialize();
 	}
 	public JFrame getFrame() {
@@ -83,11 +89,6 @@ public class MealPageMain {
 			public void actionPerformed(ActionEvent e) {
 				OpenAddMealTab();
 			}
-
-			private void OpenAddMealTab() {
-				// TODO Auto-generated method stub
-				
-			}
 		});
 		bodyPanel.add(btnA);
 		
@@ -101,7 +102,9 @@ public class MealPageMain {
 		JButton btnC = new JButton("Your Recipies");
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				OpenRecipiesTab();
 			}
+
 		});
 		bodyPanel.add(btnC);
 		
@@ -116,15 +119,10 @@ public class MealPageMain {
 		ProfileButton.setBounds(260, 11, 89, 23);
 		frame.getContentPane().add(ProfileButton);
 		
+		
 		JButton SettingsButton = new JButton("Settings");
 		SettingsButton.setBounds(160, 11, 89, 23);
 		frame.getContentPane().add(SettingsButton);
-		
-		txtFood = new JTextField();
-		txtFood.setText("FOOD");
-		txtFood.setBounds(10, 12, 86, 20);
-		frame.getContentPane().add(txtFood);
-		txtFood.setColumns(10);
 		
 		JButton DietTipsButton = new JButton("Tips For Your Diet");
 		DietTipsButton.addActionListener(new ActionListener() {
@@ -133,5 +131,30 @@ public class MealPageMain {
 		});
 		DietTipsButton.setBounds(20, 427, 318, 23);
 		frame.getContentPane().add(DietTipsButton);
+		
+		JLabel PageTitle = new JLabel("FOOD!");
+		PageTitle.setOpaque(false);
+		PageTitle.setBackground(new Color(159, 242, 145));
+		PageTitle.setBounds(154, 45, 46, 14);
+		frame.getContentPane().add(PageTitle);
+		
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				prev.setVisible(true);
+	            frame.setVisible(false);
+			}
+		});
+		backButton.setBounds(10, 11, 89, 23);
+		frame.getContentPane().add(backButton);
+	}
+	/* Private Methods to open other tabs */
+	private void OpenAddMealTab() {
+
+		AddMealPage addMealPage = new AddMealPage(frame);
+	}
+	private void OpenRecipiesTab() {
+		
+		RecipiesPage rp = new RecipiesPage(frame);
 	}
 }

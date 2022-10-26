@@ -75,7 +75,7 @@ public class HomePage{
 		mealsButton.setBounds(44, 98, 111, 116);
 		Action mealsAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
-				MealPageMain mealPage = new MealPageMain();
+				MealPageMain mealPage = new MealPageMain(frame);
 				frame.setVisible(false);
 				mealPage.getFrame().setVisible(true);
 			}
