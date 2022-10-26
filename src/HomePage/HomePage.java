@@ -126,7 +126,7 @@ public class HomePage{
 		workOutButton.setBounds(180, 98, 111, 116);
 		Action workOutAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
-				WorkoutPage workoutPage = new WorkoutPage();
+				WorkoutPage workoutPage = new WorkoutPage(frame);
 				frame.setVisible(false);
 				workoutPage.frame.setVisible(true);
 				

@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
- 
-import java.net.URL;
 
 public class WorkoutPage extends JFrame {
     public JFrame frame; //this needs to be the container
@@ -17,7 +15,7 @@ public class WorkoutPage extends JFrame {
     DefaultListModel<String> real;
     JList<String> list;
 
-    public WorkoutPage(/*JFrame prev*/){
+    public WorkoutPage(JFrame prev){
         
         frame = new JFrame();
         hist = new JButton("History");
@@ -60,13 +58,13 @@ public class WorkoutPage extends JFrame {
                 panelLog.setVisible(true);
             }
         });
-        /*back.addActionListener(new ActionListener() {
+        back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 prev.setVisible(true);
                 frame.setVisible(false);
             }
-        });*/
+        });
         /*TODO: add action listeners for plans, log, and workout
         *   make the pages for those buttons
         *
@@ -118,7 +116,7 @@ public class WorkoutPage extends JFrame {
 
 
     
-    public static void main(String[] args) {
-        new WorkoutPage();
-    }
+    // public static void main(String[] args) {
+    //     new WorkoutPage();
+    // }
 }
