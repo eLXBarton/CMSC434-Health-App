@@ -58,8 +58,8 @@ public class FullBodyPage extends JFrame{
         view.add(table3);
         
         scroller.setViewportView(view);
-        setSize(new Dimension(600,450));
-        scroller.setSize(new Dimension(600, 225));
+        setSize(new Dimension(375,500));
+        scroller.setSize(new Dimension(375, 250));
         add(scroller);
         add(back);
 
