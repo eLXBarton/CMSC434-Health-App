@@ -1,3 +1,5 @@
+package JournalPage;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,7 +12,7 @@ import javax.swing.JTextArea;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-public class JournalPagex extends JFrame {
+public class JournalPage extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +23,7 @@ public class JournalPagex extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JournalPagex frame = new JournalPagex();
+					JournalPage frame = new JournalPage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +35,7 @@ public class JournalPagex extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JournalPagex() {
+	public JournalPage() {
 		setTitle("Journal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 375, 500);
