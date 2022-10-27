@@ -1,4 +1,4 @@
 package WorkoutPage;
-public class CrossFit {
+public class Calisthenics {
     
 }
