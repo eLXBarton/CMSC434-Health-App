@@ -15,6 +15,14 @@ public class PlanPage extends JFrame{
         panelWork.setSize(prev.getSize());
         panelWork.setPreferredSize(panelWork.getSize());
 
+        cross_fit.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Calisthenics page = new Calisthenics(panelWork);
+                page.setVisible(true);
+                panelWork.setVisible(false);
+            }
+        });
         full_body.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
