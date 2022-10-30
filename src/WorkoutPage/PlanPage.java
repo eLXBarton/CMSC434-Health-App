@@ -8,13 +8,21 @@ public class PlanPage extends JFrame{
     JFrame panelWork;
     
     public PlanPage(JFrame prev){
-        JButton back = new JButton("Back"), full_body = new JButton("Full Body (3 Days)"), four = new JButton("Four Days"), cardio = new JButton("Cardio"), cross_fit = new JButton("Cross Fit");
+        JButton back = new JButton("Back"), full_body = new JButton("Full Body (3 Days)"), four = new JButton("Four Days"), cardio = new JButton("Cardio"), cross_fit = new JButton("Calisthenics");
         panelWork = new JFrame();
         panelWork.setLayout(new GridBagLayout());
         GridBagConstraints con = new GridBagConstraints();
         panelWork.setSize(prev.getSize());
         panelWork.setPreferredSize(panelWork.getSize());
 
+        cross_fit.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Calisthenics page = new Calisthenics(panelWork);
+                page.setVisible(true);
+                panelWork.setVisible(false);
+            }
+        });
         full_body.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
