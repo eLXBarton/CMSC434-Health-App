@@ -61,6 +61,8 @@ public class LogPage extends JFrame{
         con.gridheight = 1;
         con.ipady = 10;
         add(back, con);
+        
+        this.getContentPane().setBackground(new Color(255, (int) (105*1.3), (int) (97*1.3)));
     }
     
 }

@@ -34,6 +34,7 @@ public class Cardio extends JFrame{
         JScrollPane scroller = new JScrollPane();
         JPanel view = new JPanel();
         view.add(table);
+        view.setBackground(new Color(255, (int) (105*1.5), (int) (97*1.5)));
         
         scroller.setViewportView(view);
         setSize(prev.getSize());

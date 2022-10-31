@@ -57,6 +57,7 @@ public class UpperLower extends JFrame{
         view.add(sess4);
         view.add(table4);
 
+        view.setBackground(new Color(255, (int) (105*1.5), (int) (97*1.5)));
         scroller.setViewportView(view);
         setSize(new Dimension(375,500));
         scroller.setSize(new Dimension(375, 250));

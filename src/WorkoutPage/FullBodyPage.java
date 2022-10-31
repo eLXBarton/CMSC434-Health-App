@@ -56,6 +56,8 @@ public class FullBodyPage extends JFrame{
         view.add(table2);
         view.add(sess3);
         view.add(table3);
+
+        view.setBackground(new Color(255, (int) (105*1.5), (int) (97*1.5)));
         
         scroller.setViewportView(view);
         setSize(new Dimension(375,500));
