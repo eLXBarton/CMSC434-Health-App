@@ -42,7 +42,7 @@ public class WorkoutPage{
             @Override
             public void actionPerformed(ActionEvent e){
                 Profile prof = new Profile(frame);
-                prof.setVisible(true);
+                prof.frame.setVisible(true);
                 frame.setVisible(false);
             }
         };

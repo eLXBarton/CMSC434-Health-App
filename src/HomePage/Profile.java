@@ -51,7 +51,7 @@ public class Profile extends JFrame {
 		frame.setBounds(100, 100, 375, 500);
 		frame.getContentPane().setLayout(null);
 		
-		JButton homeButton = new JButton("Home");
+		JButton homeButton = new JButton("Back");
 		homeButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 10));
 		homeButton.setHorizontalAlignment(SwingConstants.LEFT);
 		homeButton.setBounds(10, 11, 65, 51);
