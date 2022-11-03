@@ -82,24 +82,19 @@ public class MealPageMain {
 		bodyPanel.setForeground(new Color(240, 240, 240));
 		bodyPanel.setBounds(10, 70, 339, 354);
 		frame.getContentPane().add(bodyPanel);
-		bodyPanel.setLayout(new GridLayout(2, 2, 20, 20));
 		
 		JButton btnA = new JButton("\r\nAdd Meal");
+		btnA.setBounds(20, 20, 298, 156);
 		btnA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OpenAddMealTab();
 			}
 		});
+		bodyPanel.setLayout(null);
 		bodyPanel.add(btnA);
 		
-		JButton btnB = new JButton("b2");
-		btnB.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		bodyPanel.add(btnB);
-		
 		JButton btnC = new JButton("Your Recipies");
+		btnC.setBounds(20, 187, 139, 147);
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OpenRecipiesTab();
@@ -109,6 +104,7 @@ public class MealPageMain {
 		bodyPanel.add(btnC);
 		
 		JButton btnD = new JButton("Links To New Recipies");
+		btnD.setBounds(179, 187, 139, 147);
 		btnD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

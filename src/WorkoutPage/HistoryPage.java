@@ -9,6 +9,7 @@ public class HistoryPage extends JFrame{
         JScrollPane frame = new JScrollPane();
         JPanel temp = new JPanel();
         temp.add(list);
+        temp.setBackground(new Color(255, (int) (105*1.5), (int) (97*1.5)));
         frame.setViewportView(temp);
         JButton back = new JButton("Back");
         back.setSize(new Dimension(100, 75));
