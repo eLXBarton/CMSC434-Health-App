@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class WorkoutPage{
     public JFrame frame; //this needs to be the container
     JPanel panelWork, panelLog, panelHist, panelHome; //these need to go in the frame
-    JButton settings, back, hist, plan, log, profile;
+    JButton back, hist, plan, log, profile;
     JTextArea text1;
     java.net.URL web_page;
     JScrollPane scroller;
@@ -21,7 +21,6 @@ public class WorkoutPage{
         hist = new JButton("History");
         plan = new JButton("Plans");
         log = new JButton("Log Workout");
-        settings = new JButton("Settings");
         profile = new JButton("Profile");
         back = new JButton("Back");
         real = new DefaultListModel<String>();
@@ -111,10 +110,6 @@ public class WorkoutPage{
         con1.gridx = 1;
         con1.gridy = 0;
         con1.ipadx=10;
-        con1.insets = new Insets(5,10,0,10);
-        north.add(settings, con1);
-        con1.gridx = 2;
-        con1.gridy = 0;
         con1.insets = new Insets(5,10,0,5);
         north.add(profile,con1);
         con1.gridx = 0;
