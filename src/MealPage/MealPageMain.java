@@ -30,8 +30,11 @@ import javax.swing.JLabel;
 import java.awt.Insets;
 import net.miginfocom.swing.MigLayout;
 import java.awt.Color;
+import java.awt.Desktop;
+
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 
 public class MealPageMain {
@@ -41,6 +44,7 @@ public class MealPageMain {
 	private AddMealPage addMealPage = null;
 	private RecipiesPage rp = null;
 	private LinksPage links = null;
+//	private TipsPage tips = null;
 	/**
 	 * Launch the application.
 	 */
@@ -136,6 +140,7 @@ public class MealPageMain {
 		JButton DietTipsButton = new JButton("Tips For Your Diet");
 		DietTipsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				OpenTipsTab();
 			}
 		});
 		DietTipsButton.setBounds(20, 427, 318, 23);
@@ -170,5 +175,14 @@ public class MealPageMain {
 	
 	private void OpenLinksTab() {
 		links = new LinksPage(frame);
+	} 
+	
+	private void OpenTipsTab() {
+		String urlString = "https://www.cdc.gov/nccdphp/dnpao/features/healthy-eating-tips/index.html";
+	    try {
+	        Desktop.getDesktop().browse(new URL(urlString).toURI());
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 }
