@@ -152,4 +152,8 @@ public class AddMealPage {
 		
 		addMealPageFrame.setVisible(true);
 	}
+	
+//	public void setVisible(boolean on) {
+//		addMealPageFrame.setVisible(on);
+//	}
 }

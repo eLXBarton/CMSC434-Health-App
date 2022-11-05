@@ -79,7 +79,7 @@ public class RecipiesPage {
 		recipiesFrame.getContentPane().add(BodyPanel);
 		
 		JLabel recipiesLabel = new JLabel("Your Recipies!");
-		recipiesLabel.setBounds(135, 11, 76, 14);
+		recipiesLabel.setBounds(135, 11, 100, 14);
 		BodyPanel.add(recipiesLabel);
 		
 		JPanel panel_1 = new JPanel();
@@ -102,4 +102,8 @@ public class RecipiesPage {
 		
 		recipiesFrame.setVisible(true);
 	}
+	
+//	public void setVisible(boolean on) {
+//		recipiesFrame.setVisible(on);
+//	}
 }

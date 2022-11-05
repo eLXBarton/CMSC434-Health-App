@@ -14,6 +14,7 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 
+import HomePage.Profile;
 import WorkoutPage.LogPage;
 
 import javax.swing.GroupLayout;
@@ -37,7 +38,9 @@ public class MealPageMain {
 
 	private JFrame frame;
 	private JFrame prev;
-
+	private AddMealPage addMealPage = null;
+	private RecipiesPage rp = null;
+	private LinksPage links = null;
 	/**
 	 * Launch the application.
 	 */
@@ -83,6 +86,7 @@ public class MealPageMain {
 		bodyPanel.setBounds(10, 70, 339, 354);
 		frame.getContentPane().add(bodyPanel);
 		
+		//Main functionality - Add a meal (Will connect with "Your Recipes")
 		JButton btnA = new JButton("\r\nAdd Meal");
 		btnA.setBounds(20, 20, 298, 156);
 		btnA.addActionListener(new ActionListener() {
@@ -93,7 +97,8 @@ public class MealPageMain {
 		bodyPanel.setLayout(null);
 		bodyPanel.add(btnA);
 		
-		JButton btnC = new JButton("Your Recipies");
+		//Recipes Page - Goes to "Your Recipes"
+		JButton btnC = new JButton("Your Recipes");
 		btnC.setBounds(20, 187, 139, 147);
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,23 +108,31 @@ public class MealPageMain {
 		});
 		bodyPanel.add(btnC);
 		
-		JButton btnD = new JButton("Links To New Recipies");
+		JButton btnD = new JButton("New Recipie Links");
 		btnD.setBounds(179, 187, 139, 147);
 		btnD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				OpenLinksTab();
 			}
 		});
 		bodyPanel.add(btnD);
 		
+		//Code for profile button (creates new profile page and opens it)
 		JButton ProfileButton = new JButton("Profile");
 		ProfileButton.setBounds(260, 11, 89, 23);
+		
+		ActionListener profPage = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Profile prof = new Profile(frame);
+                prof.frame.setVisible(true);
+                frame.setVisible(false);
+            }
+        };
+        ProfileButton.addActionListener(profPage);
 		frame.getContentPane().add(ProfileButton);
 		
-		
-		JButton SettingsButton = new JButton("Settings");
-		SettingsButton.setBounds(160, 11, 89, 23);
-		frame.getContentPane().add(SettingsButton);
-		
+		//Diet Tips - Opens new page to diet tips
 		JButton DietTipsButton = new JButton("Tips For Your Diet");
 		DietTipsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -145,12 +158,17 @@ public class MealPageMain {
 		frame.getContentPane().add(backButton);
 	}
 	/* Private Methods to open other tabs */
+	//Checks if add meal page is already made- If not, then make one, else set visibility to true.
 	private void OpenAddMealTab() {
-
-		AddMealPage addMealPage = new AddMealPage(frame);
+		addMealPage = new AddMealPage(frame);
 	}
+	
+	//Checks if recipe page is already made- If not, then make one, else set visibility to true.
 	private void OpenRecipiesTab() {
-		
-		RecipiesPage rp = new RecipiesPage(frame);
+		rp = new RecipiesPage(frame);
+	}
+	
+	private void OpenLinksTab() {
+		links = new LinksPage(frame);
 	}
 }
