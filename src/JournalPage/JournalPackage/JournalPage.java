@@ -25,7 +25,7 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.util.Scanner;
 
-public class JournalPagex extends JFrame {
+public class JournalPage extends JFrame {
 
 	private JPanel contentPane;
 	private AllEntries lst;
@@ -46,7 +46,7 @@ public class JournalPagex extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JournalPagex frame = new JournalPagex();
+					JournalPage frame = new JournalPage();
 					
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -59,7 +59,7 @@ public class JournalPagex extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JournalPagex() {
+	public JournalPage() {
 		setTitle("Journal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 375, 500);
