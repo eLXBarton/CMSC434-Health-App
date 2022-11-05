@@ -13,11 +13,15 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import java.awt.GridLayout;
 import javax.swing.JTextArea;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.SoftBevelBorder;
 
 public class AddMealPage {
 
 	private JFrame addMealPageFrame;
 	private JFrame prevFrame;
+	private LinksPage links = null;
 
 	/**
 	 * Launch the application.
@@ -79,6 +83,8 @@ public class AddMealPage {
 		suggestionPanel.add(suggMeal3);
 		
 		JPanel addPanel = new JPanel();
+		addPanel.setForeground(new Color(0, 0, 0));
+		addPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		addPanel.setBounds(10, 111, 319, 221);
 		BodyPanel.add(addPanel);
 		addPanel.setLayout(null);
@@ -100,7 +106,12 @@ public class AddMealPage {
 		addPanel.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JButton linkButton = new JButton("Other Recipies");
+		JButton linkButton = new JButton("Other Recipes");
+		linkButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OpenLinksTab();
+			}
+		});
 		panel_2.add(linkButton);
 		
 		JLabel nameLabel = new JLabel("Meal Name:");
@@ -153,6 +164,9 @@ public class AddMealPage {
 		addMealPageFrame.setVisible(true);
 	}
 	
+	private void OpenLinksTab() {
+		links = new LinksPage(addMealPageFrame);
+	} 
 //	public void setVisible(boolean on) {
 //		addMealPageFrame.setVisible(on);
 //	}
