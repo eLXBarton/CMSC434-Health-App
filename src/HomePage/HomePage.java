@@ -60,7 +60,7 @@ public class HomePage{
 		profileButton.setForeground(Color.BLACK);
 		profileButton.setBackground(Color.WHITE);
 		profileButton.setHorizontalAlignment(SwingConstants.LEFT);
-		profileButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 10));
+		profileButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
 		profileButton.setBounds(294, 0, 69, 64);
 		Action profileAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
@@ -112,7 +112,7 @@ public class HomePage{
 		JButton mealsButton = new JButton("Meals");
 		mealsButton.setForeground(Color.BLACK);
 		mealsButton.setBackground(Color.WHITE);
-		mealsButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
+		mealsButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		mealsButton.setBounds(44, 98, 111, 116);
 		Action mealsAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
@@ -163,7 +163,7 @@ public class HomePage{
 		JButton workOutButton = new JButton("Workouts");
 		workOutButton.setForeground(Color.BLACK);
 		workOutButton.setBackground(Color.WHITE);
-		workOutButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
+		workOutButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		workOutButton.setBounds(180, 98, 111, 116);
 		Action workOutAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
@@ -216,7 +216,7 @@ public class HomePage{
 		journalButton.setForeground(Color.BLACK);
 		journalButton.setBackground(Color.WHITE);
 		journalButton.setBounds(121, 260, 111, 116);
-		journalButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
+		journalButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		Action journalAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
 				JournalPage jPage = new JournalPage();
@@ -267,7 +267,7 @@ public class HomePage{
 		JTextArea txtrWelcomeToIncluded = new JTextArea();
 		txtrWelcomeToIncluded.setEditable(false);
 		txtrWelcomeToIncluded.setLineWrap(true);
-		txtrWelcomeToIncluded.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
+		txtrWelcomeToIncluded.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		txtrWelcomeToIncluded.setText("Welcome To Included Health!");
 		txtrWelcomeToIncluded.setBounds(44, 30, 247, 54);
 		txtrWelcomeToIncluded.setBackground(new Color(101, 211, 255));
@@ -275,7 +275,7 @@ public class HomePage{
 		frame.getContentPane().add(txtrWelcomeToIncluded);
 		
 		JButton exitButton = new JButton("Exit");
-		exitButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 10));
+		exitButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 10));
 		exitButton.setBounds(264, 407, 89, 23);
 		Action exitAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
