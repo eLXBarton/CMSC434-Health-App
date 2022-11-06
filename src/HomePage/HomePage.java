@@ -15,7 +15,7 @@ import javax.swing.SwingConstants;
 
 import MealPage.MealPageMain;
 import WorkoutPage.WorkoutPage;
-import JournalPage.JournalPage;
+import JournalPage.JournalPackage.*;
 
 public class HomePage{
 

@@ -1,4 +1,4 @@
-package JournalPackage;
+package JournalPage.JournalPackage;
 
 public class MainClass {
 

@@ -1,4 +1,4 @@
-package JournalPackage;
+package JournalPage.JournalPackage;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
