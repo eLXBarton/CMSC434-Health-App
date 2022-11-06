@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
@@ -42,8 +43,10 @@ public class MealPageMain {
 	private JFrame frame;
 	private JFrame prev;
 	private AddMealPage addMealPage = null;
-	private RecipiesPage rp = null;
+	private RecipesPage rp = null;
 	private LinksPage links = null;
+	DefaultListModel<String> recipesList = new DefaultListModel<String>();
+
 //	private TipsPage tips = null;
 	/**
 	 * Launch the application.
@@ -165,12 +168,12 @@ public class MealPageMain {
 	/* Private Methods to open other tabs */
 	//Checks if add meal page is already made- If not, then make one, else set visibility to true.
 	private void OpenAddMealTab() {
-		addMealPage = new AddMealPage(frame);
+		addMealPage = new AddMealPage(frame, recipesList);
 	}
 	
 	//Checks if recipe page is already made- If not, then make one, else set visibility to true.
 	private void OpenRecipiesTab() {
-		rp = new RecipiesPage(frame);
+		rp = new RecipesPage(frame, recipesList);
 	}
 	
 	private void OpenLinksTab() {

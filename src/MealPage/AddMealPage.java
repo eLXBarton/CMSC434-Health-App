@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -22,6 +23,8 @@ public class AddMealPage {
 	private JFrame addMealPageFrame;
 	private JFrame prevFrame;
 	private LinksPage links = null;
+	private DefaultListModel<String> listToAdd;
+	private JTextField nameTextField;
 
 	/**
 	 * Launch the application.
@@ -30,7 +33,7 @@ public class AddMealPage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddMealPage window = new AddMealPage(null);
+					AddMealPage window = new AddMealPage(null,null);
 					window.addMealPageFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,9 +45,10 @@ public class AddMealPage {
 	/**
 	 * Create the application.
 	 */
-	public AddMealPage(JFrame prev) {
+	public AddMealPage(JFrame prev, DefaultListModel<String> listToAdd) {
 		prevFrame = prev;
 		prevFrame.setVisible(false);
+		this.listToAdd = listToAdd;
 		initialize();
 	}
 
@@ -93,11 +97,12 @@ public class AddMealPage {
 		lblNewLabel.setBounds(121, 9, 82, 14);
 		addPanel.add(lblNewLabel);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(131, 34, 178, 22);
-		addPanel.add(textArea);
-		
 		JButton addButton = new JButton("Add");
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddToList();
+			}
+		});
 		addButton.setBounds(108, 154, 89, 23);
 		addPanel.add(addButton);
 		
@@ -142,6 +147,11 @@ public class AddMealPage {
 		textArea_1_1_1.setBounds(131, 120, 178, 22);
 		addPanel.add(textArea_1_1_1);
 		
+		nameTextField = new JTextField();
+		nameTextField.setBounds(131, 34, 178, 20);
+		addPanel.add(nameTextField);
+		nameTextField.setColumns(10);
+		
 		JPanel headerPanel = new JPanel();
 		headerPanel.setBounds(10, 11, 339, 68);
 		addMealPageFrame.getContentPane().add(headerPanel);
@@ -167,7 +177,11 @@ public class AddMealPage {
 	private void OpenLinksTab() {
 		links = new LinksPage(addMealPageFrame);
 	} 
-//	public void setVisible(boolean on) {
-//		addMealPageFrame.setVisible(on);
-//	}
+	
+	public DefaultListModel<String> AddToList(){
+		String toAdd = nameTextField.getText();
+		listToAdd.addElement(toAdd);
+		
+		return listToAdd;
+	}
 }

@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
@@ -16,10 +17,11 @@ import javax.swing.JTable;
 import javax.swing.JList;
 import javax.swing.border.BevelBorder;
 
-public class RecipiesPage {
+public class RecipesPage {
 
-	private JFrame recipiesFrame;
+	private JFrame recipesFrame;
 	private JFrame prevFrame;
+	private DefaultListModel<String> listToShow;
 
 	/**
 	 * Launch the application.
@@ -28,8 +30,8 @@ public class RecipiesPage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RecipiesPage window = new RecipiesPage(null);
-					window.recipiesFrame.setVisible(true);
+					RecipesPage window = new RecipesPage(null,null);
+					window.recipesFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,9 +42,10 @@ public class RecipiesPage {
 	/**
 	 * Create the application.
 	 */
-	public RecipiesPage(JFrame prev) {
+	public RecipesPage(JFrame prev, DefaultListModel<String> listToShow) {
 		prevFrame = prev;
 		prevFrame.setVisible(false);
+		this.listToShow = listToShow;
 		initialize();
 	}
 
@@ -50,23 +53,23 @@ public class RecipiesPage {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		JFrame recipiesFrame = new JFrame();
-		recipiesFrame.getContentPane().setBackground(new Color(0, 128, 0));
-		recipiesFrame.getContentPane().setForeground(new Color(192, 192, 192));
-		recipiesFrame.setBounds(100, 100, 375, 500);
-		recipiesFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		recipiesFrame.getContentPane().setLayout(null);
+		recipesFrame = new JFrame();
+		recipesFrame.getContentPane().setBackground(new Color(0, 128, 0));
+		recipesFrame.getContentPane().setForeground(new Color(192, 192, 192));
+		recipesFrame.setBounds(100, 100, 375, 500);
+		recipesFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		recipesFrame.getContentPane().setLayout(null);
 		
 		JPanel headerPanel = new JPanel();
 		headerPanel.setLayout(null);
 		headerPanel.setBounds(10, 11, 339, 68);
-		recipiesFrame.getContentPane().add(headerPanel);
+		recipesFrame.getContentPane().add(headerPanel);
 		
 		JButton backButton = new JButton("Back");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				prevFrame.setVisible(true);
-                recipiesFrame.setVisible(false);
+                recipesFrame.setVisible(false);
 			}
 		});
 		backButton.setBounds(10, 11, 89, 23);
@@ -76,9 +79,9 @@ public class RecipiesPage {
 		JPanel BodyPanel = new JPanel();
 		BodyPanel.setLayout(null);
 		BodyPanel.setBounds(10, 107, 339, 343);
-		recipiesFrame.getContentPane().add(BodyPanel);
+		recipesFrame.getContentPane().add(BodyPanel);
 		
-		JLabel recipiesLabel = new JLabel("Your Recipies!");
+		JLabel recipiesLabel = new JLabel("Your Recipes!");
 		recipiesLabel.setBounds(135, 11, 100, 14);
 		BodyPanel.add(recipiesLabel);
 		
@@ -92,18 +95,23 @@ public class RecipiesPage {
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JButton linkButton_1 = new JButton("Other Recipies");
+		JButton linkButton_1 = new JButton("Other Recipes");
+		linkButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LinksPage linkTab = new LinksPage(recipesFrame);
+			}
+		});
 		panel_2.add(linkButton_1);
 		
-		JList list = new JList();
-		list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		list.setBounds(10, 252, 299, -240);
+		JList tempList = new JList(listToShow);
+		tempList.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		tempList.setBounds(10, 252, 299, -240);
+		panel_1.add(tempList);
+		
+		JList list = new JList(listToShow);
+		list.setBounds(0, 0, 319, 258);
 		panel_1.add(list);
 		
-		recipiesFrame.setVisible(true);
+		recipesFrame.setVisible(true);
 	}
-	
-//	public void setVisible(boolean on) {
-//		recipiesFrame.setVisible(on);
-//	}
 }
