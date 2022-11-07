@@ -219,7 +219,7 @@ public class HomePage{
 		journalButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		Action journalAction = new Action() {
 			public void actionPerformed(ActionEvent e) {
-				JournalPage jPage = new JournalPage();
+				JournalPage jPage = new JournalPage(frame);
 				frame.setVisible(false);
 				jPage.setVisible(true);
 				
